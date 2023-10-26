@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./dist/output.css">
+    <title>TODO List App</title>
+    <!-- Agrega enlaces a tus archivos CSS y JS aquí -->
+</head>
+
+<body class="bg-slate-300">
+    <header>
+        <h1 class="text-5xl text-center mb-10 mt-10">TODO List App</h1>
+    </header>
+    <div class=" h-[46rem] p-4 flex row">
+        <div id="task-form" class="w-1/2 flex flex-col items-center">
+            <h1 class="text-3xl text-center mb-5">Añade y Edita tus tareas</h1>
+            <form class="w-8/12 h-[40rem] p-4 bg-white rounded shadow-lg">
+                <input type="text" id="tipo" hidden>
+                <input type="text" id="id" hidden>
+                <div class="mb-4">
+                    <label for="title" class="block text-sm font-medium text-gray-700">Título</label>
+                    <input type="text" id="title" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-lg focus:outline-none focus:border-blue-500" placeholder="Escribe el título">
+                </div>
+                <div class="mb-4">
+                    <label for="description" class="block text-sm font-medium text-gray-700">Descripción</label>
+                    <textarea id="description" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-lg focus:outline-none focus:border-blue-500" rows="4" placeholder="Escribe la descripción"></textarea>
+                </div>
+                <div class="mb-4">
+                    <label for="status" class="block text-sm font-medium text-gray-700">
+                        <input id="status" type="checkbox" class="mr-2">
+                        Completado
+                    </label>
+                </div>
+                <div class="mb-4">
+                    <label for="priority" class="block text-sm font-medium text-gray-700">Prioridad</label>
+                    <select id="priority" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-lg focus:outline-none focus:border-blue-500">
+                        <option value="" selected hidden>Selecciona la prioridad</option>
+                        <option value="Alta">Alta</option>
+                        <option value="Media">Media</option>
+                        <option value="Baja">Baja</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="category" class="block text-sm font-medium text-gray-700">Categoría</label>
+                    <select id="category" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-lg focus:outline-none focus:border-blue-500">
+                        <option value="" selected hidden>Selecciona la categoría</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Escolar">Escolar</option>
+                        <option value="Laboral">Laboral</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="date" class="block text-sm font-medium text-gray-700">Fecha</label>
+                    <input type="date" id="date" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-lg focus:outline-none focus:border-blue-500">
+                </div>
+                <button id="guardar" type="submit" class="block w-full px-4 py-2 mt-4 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none">
+                    Agregar Tarea
+                </button>
+            </form>
+            
+        </div>
+
+        <div class="w-1/2  h-full flex flex-col items-center">
+            <h1 class="text-3xl text-center mb-5">Administra tus tareas</h1>
+            <div id="task-list"  class=" grid grid-cols-2 h-full w-full overflow-y-scroll">                
+            </div>
+        </div>
+    </div>
+
+    <!-- Agrega cualquier otra sección necesaria aquí -->
+    <script type="module" src="./js/shared/fetch-api.js"></script>
+    <script type="module" src="./js/index.js"></script> 
+</body>
+
+</html>
